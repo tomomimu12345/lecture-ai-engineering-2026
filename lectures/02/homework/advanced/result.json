@@ -1,0 +1,47 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 10,
+    "warmup_steps": 10,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 160,
+    "gen": {
+      "do_sample": false
+    },
+    "data": "glossary_sft.jsonl（scripts/make_sft_dataset.py の出力そのまま、58 語 x 2 テンプレート）"
+  },
+  "train_seconds": 172,
+  "losses": [
+    3.1290293375651044,
+    1.854616673787435,
+    0.9532580693562825,
+    0.3949809392293294,
+    0.18427057266235353,
+    0.12805519898732504,
+    0.10157802899678549,
+    0.0918888807296753,
+    0.08504831790924072,
+    0.08242058753967285
+  ],
+  "global_step": 150,
+  "before": {
+    "label": "before",
+    "seconds": 202.9,
+    "seen_rate": 0.0,
+    "para_rate": 0.0,
+    "unknown_rate": 0.0
+  },
+  "after": {
+    "label": "after",
+    "seconds": 95.0,
+    "seen_rate": 1.0,
+    "para_rate": 0.2,
+    "unknown_rate": 0.143
+  },
+  "executed_training_myself": true
+}
