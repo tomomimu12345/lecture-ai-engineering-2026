@@ -1,0 +1,432 @@
+{
+  "seeds": [
+    0,
+    2,
+    42
+  ],
+  "rows": [
+    {
+      "epochs": 1,
+      "steps": 2,
+      "n_seeds": 3,
+      "format_rate": {
+        "mean": 0.9048,
+        "sd": 0.0,
+        "min": 0.9048,
+        "max": 0.9048
+      },
+      "content_rate": {
+        "mean": 0.6667,
+        "sd": 0.0,
+        "min": 0.6667,
+        "max": 0.6667
+      },
+      "grounded_rate": {
+        "mean": 0.7333,
+        "sd": 0.0,
+        "min": 0.7333,
+        "max": 0.7333
+      },
+      "ungrounded_rate": {
+        "mean": 0.5,
+        "sd": 0.0,
+        "min": 0.5,
+        "max": 0.5
+      },
+      "final_loss": {
+        "mean": 2.4719,
+        "sd": 0.0238,
+        "min": 2.448,
+        "max": 2.4957
+      },
+      "eval_loss": {
+        "mean": 2.3919,
+        "sd": 0.0021,
+        "min": 2.3904,
+        "max": 2.3943
+      },
+      "train_seconds": {
+        "mean": 12.3667,
+        "sd": 0.2082,
+        "min": 12.2,
+        "max": 12.6
+      }
+    },
+    {
+      "epochs": 2,
+      "steps": 4,
+      "n_seeds": 3,
+      "format_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "content_rate": {
+        "mean": 0.8571,
+        "sd": 0.0476,
+        "min": 0.8095,
+        "max": 0.9048
+      },
+      "grounded_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "ungrounded_rate": {
+        "mean": 0.5,
+        "sd": 0.1667,
+        "min": 0.3333,
+        "max": 0.6667
+      },
+      "final_loss": {
+        "mean": 2.1254,
+        "sd": 0.008,
+        "min": 2.12,
+        "max": 2.1346
+      },
+      "eval_loss": {
+        "mean": 1.8311,
+        "sd": 0.0053,
+        "min": 1.8274,
+        "max": 1.8372
+      },
+      "train_seconds": {
+        "mean": 21.9333,
+        "sd": 1.0214,
+        "min": 21.2,
+        "max": 23.1
+      }
+    },
+    {
+      "epochs": 3,
+      "steps": 6,
+      "n_seeds": 3,
+      "format_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "content_rate": {
+        "mean": 0.7143,
+        "sd": 0.0,
+        "min": 0.7143,
+        "max": 0.7143
+      },
+      "grounded_rate": {
+        "mean": 0.9333,
+        "sd": 0.0,
+        "min": 0.9333,
+        "max": 0.9333
+      },
+      "ungrounded_rate": {
+        "mean": 0.1667,
+        "sd": 0.0,
+        "min": 0.1667,
+        "max": 0.1667
+      },
+      "final_loss": {
+        "mean": 1.4956,
+        "sd": 0.0317,
+        "min": 1.473,
+        "max": 1.5318
+      },
+      "eval_loss": {
+        "mean": 1.1908,
+        "sd": 0.0087,
+        "min": 1.1827,
+        "max": 1.2
+      },
+      "train_seconds": {
+        "mean": 33.9667,
+        "sd": 1.0599,
+        "min": 33.0,
+        "max": 35.1
+      }
+    },
+    {
+      "epochs": 4,
+      "steps": 8,
+      "n_seeds": 3,
+      "format_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "content_rate": {
+        "mean": 0.7143,
+        "sd": 0.0,
+        "min": 0.7143,
+        "max": 0.7143
+      },
+      "grounded_rate": {
+        "mean": 0.9333,
+        "sd": 0.0,
+        "min": 0.9333,
+        "max": 0.9333
+      },
+      "ungrounded_rate": {
+        "mean": 0.1667,
+        "sd": 0.0,
+        "min": 0.1667,
+        "max": 0.1667
+      },
+      "final_loss": {
+        "mean": 0.8232,
+        "sd": 0.0193,
+        "min": 0.8054,
+        "max": 0.8438
+      },
+      "eval_loss": {
+        "mean": 0.7029,
+        "sd": 0.0062,
+        "min": 0.6984,
+        "max": 0.71
+      },
+      "train_seconds": {
+        "mean": 46.5333,
+        "sd": 0.7234,
+        "min": 45.7,
+        "max": 47.0
+      }
+    },
+    {
+      "epochs": 5,
+      "steps": 10,
+      "n_seeds": 3,
+      "format_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "content_rate": {
+        "mean": 0.7143,
+        "sd": 0.0,
+        "min": 0.7143,
+        "max": 0.7143
+      },
+      "grounded_rate": {
+        "mean": 0.8667,
+        "sd": 0.0,
+        "min": 0.8667,
+        "max": 0.8667
+      },
+      "ungrounded_rate": {
+        "mean": 0.3333,
+        "sd": 0.0,
+        "min": 0.3333,
+        "max": 0.3333
+      },
+      "final_loss": {
+        "mean": 0.457,
+        "sd": 0.0119,
+        "min": 0.4483,
+        "max": 0.4705
+      },
+      "eval_loss": {
+        "mean": 0.4582,
+        "sd": 0.0038,
+        "min": 0.4549,
+        "max": 0.4624
+      },
+      "train_seconds": {
+        "mean": 58.2333,
+        "sd": 0.1528,
+        "min": 58.1,
+        "max": 58.4
+      }
+    },
+    {
+      "epochs": 7,
+      "steps": 14,
+      "n_seeds": 3,
+      "format_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "content_rate": {
+        "mean": 0.7619,
+        "sd": 0.0825,
+        "min": 0.6667,
+        "max": 0.8095
+      },
+      "grounded_rate": {
+        "mean": 0.9333,
+        "sd": 0.0,
+        "min": 0.9333,
+        "max": 0.9333
+      },
+      "ungrounded_rate": {
+        "mean": 0.3333,
+        "sd": 0.2887,
+        "min": 0.0,
+        "max": 0.5
+      },
+      "final_loss": {
+        "mean": 0.1567,
+        "sd": 0.0097,
+        "min": 0.1456,
+        "max": 0.1637
+      },
+      "eval_loss": {
+        "mean": 0.1887,
+        "sd": 0.0019,
+        "min": 0.1869,
+        "max": 0.1906
+      },
+      "train_seconds": {
+        "mean": 80.8333,
+        "sd": 0.2309,
+        "min": 80.7,
+        "max": 81.1
+      }
+    },
+    {
+      "epochs": 10,
+      "steps": 20,
+      "n_seeds": 3,
+      "format_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "content_rate": {
+        "mean": 0.8571,
+        "sd": 0.0476,
+        "min": 0.8095,
+        "max": 0.9048
+      },
+      "grounded_rate": {
+        "mean": 0.9333,
+        "sd": 0.0,
+        "min": 0.9333,
+        "max": 0.9333
+      },
+      "ungrounded_rate": {
+        "mean": 0.6667,
+        "sd": 0.1667,
+        "min": 0.5,
+        "max": 0.8333
+      },
+      "final_loss": {
+        "mean": 0.0551,
+        "sd": 0.0063,
+        "min": 0.048,
+        "max": 0.0601
+      },
+      "eval_loss": {
+        "mean": 0.1229,
+        "sd": 0.001,
+        "min": 0.1222,
+        "max": 0.1241
+      },
+      "train_seconds": {
+        "mean": 113.4,
+        "sd": 3.0348,
+        "min": 109.9,
+        "max": 115.3
+      }
+    },
+    {
+      "epochs": 15,
+      "steps": 30,
+      "n_seeds": 3,
+      "format_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "content_rate": {
+        "mean": 0.873,
+        "sd": 0.055,
+        "min": 0.8095,
+        "max": 0.9048
+      },
+      "grounded_rate": {
+        "mean": 0.9778,
+        "sd": 0.0385,
+        "min": 0.9333,
+        "max": 1.0
+      },
+      "ungrounded_rate": {
+        "mean": 0.6111,
+        "sd": 0.0962,
+        "min": 0.5,
+        "max": 0.6667
+      },
+      "final_loss": {
+        "mean": 0.0197,
+        "sd": 0.0006,
+        "min": 0.0193,
+        "max": 0.0204
+      },
+      "eval_loss": {
+        "mean": 0.1236,
+        "sd": 0.0008,
+        "min": 0.1228,
+        "max": 0.1243
+      },
+      "train_seconds": {
+        "mean": 172.3667,
+        "sd": 0.5033,
+        "min": 171.9,
+        "max": 172.9
+      }
+    },
+    {
+      "epochs": 20,
+      "steps": 40,
+      "n_seeds": 3,
+      "format_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "content_rate": {
+        "mean": 0.8889,
+        "sd": 0.0275,
+        "min": 0.8571,
+        "max": 0.9048
+      },
+      "grounded_rate": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "ungrounded_rate": {
+        "mean": 0.6111,
+        "sd": 0.0962,
+        "min": 0.5,
+        "max": 0.6667
+      },
+      "final_loss": {
+        "mean": 0.0137,
+        "sd": 0.0007,
+        "min": 0.0131,
+        "max": 0.0145
+      },
+      "eval_loss": {
+        "mean": 0.1364,
+        "sd": 0.0004,
+        "min": 0.1359,
+        "max": 0.1368
+      },
+      "train_seconds": {
+        "mean": 229.6,
+        "sd": 0.3,
+        "min": 229.3,
+        "max": 229.9
+      }
+    }
+  ]
+}
