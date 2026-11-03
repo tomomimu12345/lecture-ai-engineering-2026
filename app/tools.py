@@ -6,7 +6,9 @@
 
 import json
 from functools import cache
+from datetime import datetime
 from pathlib import Path
+import random
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 MAX_RESULTS = 3
@@ -77,3 +79,48 @@ def get_lecture_summary(lecture: int) -> str:
         available = sorted(p.stem for p in (DATA_DIR / "lectures").glob("*.md"))
         return f"第{lecture}回の要点はまだありません。用意されている回: {', '.join(available)}"
     return path.read_text(encoding="utf-8")
+
+def make_quiz(lecture: int) -> str:
+    """確認問題を出したいときに、指定した回の用語から1問を選んで返す。"""
+    glossary = load_glossary()
+    lecture_glossary = [term for term in glossary if term["lecture"] == lecture]
+
+    if not lecture_glossary:
+        return json.dumps(
+            {
+                "error": f"第{lecture}回の用語は見つかりませんでした。"
+            },
+            ensure_ascii=False,
+        )
+
+    choice = random.choice(lecture_glossary)
+    term = choice["term"]
+    definition = choice["definition"]
+    return json.dumps(
+        {
+            "question": f"「{term}」とは何か？",
+            "answer": definition,
+        },
+        ensure_ascii=False,
+    )
+
+def save_learning_log(topic: str, summary: str) -> str:
+    """学習内容を learning_log/ に保存する。保存前に利用者の確認を挟む。"""
+    log_dir = Path(__file__).resolve().parent.parent / "learning_log"
+    log_dir.mkdir(exist_ok=True)
+
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    path = log_dir / f"{timestamp}_{topic.replace(' ', '_')}.md"
+
+    path.write_text(
+        f"# {topic}\n\n{summary}\n",
+        encoding="utf-8",
+    )
+
+    return json.dumps(
+        {
+            "status": "saved",
+            "path": str(path),
+        },
+        ensure_ascii=False,
+    )
