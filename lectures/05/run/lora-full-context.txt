@@ -1,0 +1,18 @@
+uv run python -m app.agent --full-context --trace "$AIE_QUESTION"
+[model] gemini-3.5-flash-lite
+[full-context] 入力227,971文字
+ご質問ありがとうございます。
+
+LoRAとQLoRAの仕組みについてですね。第2回の資料に以下の記載があります。
+
+* **LoRA**: モデルの本体（元の重み）は固定して学習せず、小さな「差分」を表す追加の部分（小さな行列）だけを学習します。（資料: lec02-main / 基盤モデルの仕組み, PDF p.52）
+* **QLoRA**: LoRAの仕組みに加え、元の重みを4bit（数値を粗く保存）に圧縮してメモリをさらに節約します。（資料: lec02-main / 基盤モデルの仕組み, PDF p.51, 52）
+
+具体的な仕組みや図解については、以下のページをご確認ください。
+* 資料: `lec02-main / 基盤モデルの仕組み`
+* ページ: PDF p.51（PEFTの主な方法と比較）、PDF p.52（LoRAとQLoRAの詳細）
+
+--- trace ---
+[time] 回答完了まで 3.83 秒（検索・埋め込みを含む）
+[usage] 入力 117,025 tokens / 出力 205 tokens / モデル応答 1 回
+[cost] 生成APIの推定コスト: $0.035620 USD（埋め込み・索引構築分は含まない）

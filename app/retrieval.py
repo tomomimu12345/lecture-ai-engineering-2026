@@ -20,6 +20,8 @@ from app.config import (
     RAG_GRAPH, GRAPH_START_K, GRAPH_HOPS, GRAPH_MAX_RESULTS,
 )
 
+SECTION_CONTEXT_MAX_PAGES = 4
+
 
 def get_all_materials() -> str:
     """全資料を、講義・章・ページの情報付きで1つの文字列にまとめる。"""
@@ -183,6 +185,48 @@ def search_graph(query: str) -> dict:
     expanded = [candidate for _, candidate in sorted(candidates.values())]
     return {"seeds": results, "expanded": expanded[:max(0, GRAPH_MAX_RESULTS - len(results))],
             "max_hops": GRAPH_HOPS}
+
+
+def search_graph_with_section_context(query: str) -> dict:
+    """Graph検索の結果に、seedと同じ章の近接ページを加えて返す。"""
+    graph_results = search_graph(query)
+    pages = load_pages(RAG_SOURCE)
+    pages_by_id = {page["page_id"]: page for page in pages}
+    seeds = graph_results["seeds"][:GRAPH_MAX_RESULTS]
+    seed_ids = {seed["page_id"] for seed in seeds}
+    section_candidates = []
+    candidate_ids = set(seed_ids)
+
+    for seed in seeds:
+        anchor = pages_by_id.get(seed["page_id"])
+        if anchor is None:
+            continue
+        neighbors = [
+            page for page in pages
+            if page["document_id"] == anchor["document_id"]
+            and page["section"] == anchor["section"]
+            and page["page_id"] not in candidate_ids
+        ]
+        neighbors.sort(key=lambda page: (abs(page["page"] - anchor["page"]), page["page"]))
+        for page in neighbors:
+            candidate_ids.add(page["page_id"])
+            section_candidates.append({**page, "anchor_page_id": seed["page_id"]})
+
+    section_expanded = section_candidates[
+        :min(SECTION_CONTEXT_MAX_PAGES, max(0, GRAPH_MAX_RESULTS - len(seeds)))
+    ]
+    selected_ids = seed_ids | {page["page_id"] for page in section_expanded}
+    graph_expanded = [
+        page for page in graph_results["expanded"]
+        if page["page_id"] not in selected_ids
+    ][:max(0, GRAPH_MAX_RESULTS - len(seeds) - len(section_expanded))]
+
+    return {
+        "seeds": seeds,
+        "section_expanded": section_expanded,
+        "expanded": graph_expanded,
+        "max_results": GRAPH_MAX_RESULTS,
+    }
 
 
 
