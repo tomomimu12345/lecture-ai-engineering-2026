@@ -1,0 +1,25 @@
+[model] gemini-3.5-flash-lite
+第3回の講義資料に基づき、それぞれの質問に対する考え方のヒントを以下にまとめました。
+
+---
+
+### 1. autoresearchで実験結果が悪い変更をどう扱うか？
+* **ヒント:** 
+  * AIに実験を回させる仕組み（`autoresearch`）では、検証の損失（スコア）がどう変化したかによってその後の処理が分岐します（第3回・PDF p.21, p.44）。
+  * スコアが改善した場合はその変更を残しますが、悪化（低下）した場合はどのような判断が下されるでしょうか？ 資料の「残すか戻すか」の記述を確認してみましょう。
+
+### 2. 冪等性の例における再開後の二重実行の防ぎ方と、巻き戻せないものとは？
+* **ヒント（二重実行の防ぎ方）:**
+  * エージェントの作業中に処理が途中で落ち、保存した時点から再開した場合、外部への操作（例：送金など）をそのままやり直すと二重に実行されてしまう問題が生じます（第3回・PDF p.48）。
+  * これを防ぐためには、外への操作をどのように管理・記録しておく必要があるでしょうか？ 対策の項目を確認してみましょう。
+* **ヒント（巻き戻せないもの）:**
+  * エージェントが途中で失敗してチェックポイントや会話の履歴の状態まで「巻き戻す」とき、何が巻き戻せて何が巻き戻せないのか（外部世界に与えた影響について）を考えてみましょう（第3回・PDF p.48）。
+
+--- trace ---
+[tool call]   search_graph_with_section_context({'query': 'autoresearch 実験結果 悪い変更'})
+[tool return] search_graph_with_section_context -> {"seeds": [{"page_id": "lec03-main-p021", "document_id": "lec03-main", "lecture": 3, "document_title": "AIエージェント", "sect…
+[tool call]   search_graph_with_section_context({'query': '冪等性 再開 二重実行 巻き戻せないもの'})
+[tool return] search_graph_with_section_context -> {"seeds": [{"page_id": "lec03-main-p048", "document_id": "lec03-main", "lecture": 3, "document_title": "AIエージェント", "sect…
+[time] 回答完了まで 5.54 秒（検索・埋め込みを含む）
+[usage] 入力 11,718 tokens / 出力 413 tokens / モデル応答 3 回
+[cost] 生成APIの推定コスト: $0.004548 USD（埋め込み・索引構築分は含まない）

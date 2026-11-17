@@ -1,0 +1,17 @@
+uv run python -m app.agent --graph --trace "$AIE_QUESTION"
+[model] gemini-3.5-flash-lite
+第2回の講義資料によると、それぞれの特徴は以下のようになっています。
+
+* **LoRA が固定するものと学習するもの**
+  * 元の重みは**固定**し、細長い2つの小さな行列（差分を表すパラメータ）だけを**学習**します（第2回・PDF p.51, p.52）。
+* **QLoRA が加えるもの**
+  * LoRAの手法に加えて、元の重みを **4bit（数値を粗く保存）に圧縮** するという工夫を加えます（第2回・PDF p.51, p.52）。
+
+これにより、大きなモデルでもGPU 1台で効率よく微調整（Fine-Tuning）できるようになっています（第2回・PDF p.52）。
+
+--- trace ---
+[tool call]   search_graph({'query': 'LoRA QLoRA 固定 学習'})
+[tool return] search_graph -> {"seeds": [{"page_id": "lec02-main-p052", "document_id": "lec02-main", "lecture": 2, "document_title": "基盤モデルの仕組み", "sec…
+[time] 回答完了まで 3.00 秒（検索・埋め込みを含む）
+[usage] 入力 5,771 tokens / 出力 189 tokens / モデル応答 2 回
+[cost] 生成APIの推定コスト: $0.002204 USD（埋め込み・索引構築分は含まない）

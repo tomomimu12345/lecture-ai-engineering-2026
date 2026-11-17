@@ -128,3 +128,21 @@ def search_graph(query: str) -> str:
         return json.dumps({"error": str(e)}, ensure_ascii=False)
     except APIError as e:
         return json.dumps({"error": api_error_message(e.code)}, ensure_ascii=False)
+
+
+def search_graph_with_section_context(query: str) -> str:
+    """Graph検索の結果に、同じ章の近接ページも加えて本文と引用情報を返す。
+
+    複数ページに分かれた話題を調べるときに使う。追加ページも質問の根拠とは限らないため、
+    本文を確認して必要なページだけを回答に引用する。
+    """
+    import sqlite3
+    from google.genai.errors import APIError
+    from app.retrieval import search_graph_with_section_context as search
+
+    try:
+        return json.dumps(search(query), ensure_ascii=False)
+    except (ValueError, OSError, sqlite3.Error) as e:
+        return json.dumps({"error": str(e)}, ensure_ascii=False)
+    except APIError as e:
+        return json.dumps({"error": api_error_message(e.code)}, ensure_ascii=False)
