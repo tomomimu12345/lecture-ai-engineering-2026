@@ -1,0 +1,134 @@
+{
+  "図書館の利用時間は？": {
+    "needs_review": false,
+    "must_include": [
+      "8:45",
+      "21:00"
+    ]
+  },
+  "平日の開館時刻と閉館時刻を教えてください": {
+    "needs_review": false,
+    "must_include": [
+      "8:45",
+      "21:00"
+    ]
+  },
+  "平日の朝は何時に開館しますか": {
+    "needs_review": false,
+    "must_include": [
+      "8:45",
+      "21:00"
+    ]
+  },
+  "借りた本はいつまでに返せばいいですか": {
+    "needs_review": false,
+    "must_include": [
+      "10 冊",
+      "2 週間"
+    ]
+  },
+  "学部生の貸出上限冊数と期間を教えてください": {
+    "needs_review": false,
+    "must_include": [
+      "10 冊",
+      "2 週間"
+    ]
+  },
+  "学部生が本を借りられる期間は何週間ですか": {
+    "needs_review": false,
+    "must_include": [
+      "10 冊",
+      "2 週間"
+    ]
+  },
+  "祝日は利用できますか": {
+    "needs_review": false,
+    "must_include": [
+      "日曜"
+    ]
+  },
+  "毎週の休館日は何曜日ですか": {
+    "needs_review": false,
+    "must_include": [
+      "日曜"
+    ]
+  },
+  "入試の期間中は図書館を使えますか": {
+    "needs_review": false,
+    "must_include": [
+      "日曜"
+    ]
+  },
+  "入館するときに使うものは？": {
+    "needs_review": false,
+    "must_include": [
+      "学生証"
+    ]
+  },
+  "入館ゲートでは何をかざしますか": {
+    "needs_review": false,
+    "must_include": [
+      "学生証"
+    ]
+  },
+  "図書館の入口で必要な持ち物は何ですか": {
+    "needs_review": false,
+    "must_include": [
+      "学生証"
+    ]
+  },
+  "図書館が閉まっているときの返し方は？": {
+    "needs_review": false,
+    "must_include": [
+      "ブックポスト"
+    ]
+  },
+  "ブックポストはどこにありますか": {
+    "needs_review": false,
+    "must_include": [
+      "ブックポスト"
+    ]
+  },
+  "閉館後でも本を返却できますか": {
+    "needs_review": false,
+    "must_include": [
+      "ブックポスト"
+    ]
+  },
+  "DVD を館内で視聴できますか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "卒業生も図書館を利用できますか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "返却が遅れたらペナルティはありますか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "大学院生は何冊まで借りられますか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "他大学の学生も入館できますか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  },
+  "電子ジャーナルは学外から読めますか": {
+    "needs_review": true,
+    "must_include": [
+      "確認"
+    ]
+  }
+}

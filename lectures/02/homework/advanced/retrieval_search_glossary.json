@@ -1,0 +1,345 @@
+[
+ {
+  "group": "seen",
+  "question": "「LoRA」とは何ですか？",
+  "id": "lora",
+  "must_include": [
+   "低ランク",
+   "固定"
+  ],
+  "query": "LoRA",
+  "hits": [
+   "lora",
+   "lora-rank",
+   "qlora"
+  ],
+  "ok": true
+ },
+ {
+  "group": "seen",
+  "question": "「QLoRA」とは何ですか？",
+  "id": "qlora",
+  "must_include": [
+   "量子化",
+   "LoRA"
+  ],
+  "query": "QLoRA",
+  "hits": [
+   "qlora",
+   "lora"
+  ],
+  "ok": true
+ },
+ {
+  "group": "seen",
+  "question": "「エポック」とは何ですか？",
+  "id": "epoch",
+  "must_include": [
+   "1周"
+  ],
+  "query": "エポック",
+  "hits": [
+   "epoch"
+  ],
+  "ok": true
+ },
+ {
+  "group": "seen",
+  "question": "「既定モデル」とは何ですか？",
+  "id": "default-model",
+  "must_include": [
+   "gemini-3.5-flash-lite"
+  ],
+  "query": "既定モデル",
+  "hits": [
+   "default-model"
+  ],
+  "ok": true
+ },
+ {
+  "group": "seen",
+  "question": "「宿題の3レベル」とは何ですか？",
+  "id": "homework-levels",
+  "must_include": [
+   "基礎",
+   "どれか1つ"
+  ],
+  "query": "宿題の3レベル",
+  "hits": [
+   "homework-levels"
+  ],
+  "ok": true
+ },
+ {
+  "group": "seen",
+  "question": "「Codespaces secret」とは何ですか？",
+  "id": "codespaces-secret",
+  "must_include": [
+   "環境変数"
+  ],
+  "query": "Codespaces secret",
+  "hits": [
+   "codespaces-secret",
+   "codespaces",
+   "api-key"
+  ],
+  "ok": true
+ },
+ {
+  "group": "seen",
+  "question": "「ハルシネーション」とは何ですか？",
+  "id": "hallucination",
+  "must_include": [
+   "事実と異なる"
+  ],
+  "query": "ハルシネーション",
+  "hits": [
+   "hallucination"
+  ],
+  "ok": true
+ },
+ {
+  "group": "seen",
+  "question": "「TestModel」とは何ですか？",
+  "id": "test-model",
+  "must_include": [
+   "Pydantic AI",
+   "テスト"
+  ],
+  "query": "TestModel",
+  "hits": [
+   "test-model"
+  ],
+  "ok": true
+ },
+ {
+  "group": "seen",
+  "question": "「lecNN-start タグ」とは何ですか？",
+  "id": "lec-start-tag",
+  "must_include": [
+   "タグ",
+   "演習"
+  ],
+  "query": "lecNN-start タグ",
+  "hits": [
+   "lec-start-tag"
+  ],
+  "ok": true
+ },
+ {
+  "group": "seen",
+  "question": "「過学習」とは何ですか？",
+  "id": "overfitting",
+  "must_include": [
+   "学習データ",
+   "未知"
+  ],
+  "query": "過学習",
+  "hits": [
+   "overfitting",
+   "epoch"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "Low-Rank Adaptation はどんな仕組みで学習しますか？",
+  "id": "lora",
+  "must_include": [
+   "低ランク",
+   "固定"
+  ],
+  "query": "Low-Rank Adaptation",
+  "hits": [
+   "lora",
+   "lora-rank"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "overfitting に気づくにはどうすればいいですか？",
+  "id": "overfitting",
+  "must_include": [
+   "検証データ"
+  ],
+  "query": "overfitting",
+  "hits": [
+   "overfitting"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "AIE2026 の演習で標準に使うモデルはどれですか？",
+  "id": "default-model",
+  "must_include": [
+   "gemini-3.5-flash-lite"
+  ],
+  "query": "既定モデル",
+  "hits": [
+   "default-model"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "AIE2026 の宿題は、いくつのレベルのうち何個やれば完了ですか？",
+  "id": "homework-levels",
+  "must_include": [
+   "どれか1つ"
+  ],
+  "query": "宿題",
+  "hits": [
+   "homework-levels",
+   "adk",
+   "answer-md"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "幻覚（hallucination）が起きやすいのはどんな質問をしたときですか？",
+  "id": "hallucination",
+  "must_include": [
+   "知らない"
+  ],
+  "query": "幻覚",
+  "hits": [
+   "hallucination"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "温度パラメータを低くすると出力はどうなりますか？",
+  "id": "temperature",
+  "must_include": [
+   "安定"
+  ],
+  "query": "温度パラメータ",
+  "hits": [
+   "temperature"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "429エラーが返ってくるのはどんなときですか？",
+  "id": "rate-limit",
+  "must_include": [
+   "上限"
+  ],
+  "query": "429エラー",
+  "hits": [
+   "rate-limit"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "Function calling で関数を実際に実行するのは誰ですか？",
+  "id": "tool",
+  "must_include": [
+   "プログラム側"
+  ],
+  "query": "Function calling",
+  "hits": [
+   "tool"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "Pydantic AI で実際の LLM を呼ばずにテストするための偽モデルは何ですか？",
+  "id": "test-model",
+  "must_include": [
+   "TestModel"
+  ],
+  "query": "TestModel",
+  "hits": [
+   "test-model"
+  ],
+  "ok": true
+ },
+ {
+  "group": "para",
+  "question": "lec03-start は何に使うタグですか？",
+  "id": "lec-start-tag",
+  "must_include": [
+   "ブランチ"
+  ],
+  "query": "lec03-start",
+  "hits": [
+   "lec-start-tag"
+  ],
+  "ok": true
+ },
+ {
+  "group": "unknown",
+  "question": "「RAG」とは何ですか？",
+  "id": null,
+  "must_include": [],
+  "query": "RAG",
+  "hits": [
+   "fine-tuning"
+  ],
+  "ok": false
+ },
+ {
+  "group": "unknown",
+  "question": "「プロンプトインジェクション」とは何ですか？",
+  "id": null,
+  "must_include": [],
+  "query": "プロンプトインジェクション",
+  "hits": [
+   "prompt"
+  ],
+  "ok": false
+ },
+ {
+  "group": "unknown",
+  "question": "「知識蒸留」とは何ですか？",
+  "id": null,
+  "must_include": [],
+  "query": "知識蒸留",
+  "hits": [],
+  "ok": true
+ },
+ {
+  "group": "unknown",
+  "question": "「RLHF」とは何ですか？",
+  "id": null,
+  "must_include": [],
+  "query": "RLHF",
+  "hits": [],
+  "ok": true
+ },
+ {
+  "group": "unknown",
+  "question": "「lec04-review タグ」とは何ですか？",
+  "id": null,
+  "must_include": [],
+  "query": "lec04-review タグ",
+  "hits": [],
+  "ok": true
+ },
+ {
+  "group": "unknown",
+  "question": "AIE2026 の「修了ボーナス課題」とは何ですか？",
+  "id": null,
+  "must_include": [],
+  "query": "修了ボーナス課題",
+  "hits": [],
+  "ok": true
+ },
+ {
+  "group": "unknown",
+  "question": "AIE2026 の「講座ポイント制度」とは何ですか？",
+  "id": null,
+  "must_include": [],
+  "query": "講座ポイント制度",
+  "hits": [],
+  "ok": true
+ }
+]

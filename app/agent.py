@@ -21,7 +21,7 @@ from pathlib import Path
 from contextlib import nullcontext
 from time import perf_counter
 
-from pydantic_ai import Agent
+from pydantic_ai import Agent, DeferredToolRequests
 from pydantic_ai.exceptions import ModelHTTPError
 from fastmcp import Client
 from pydantic_ai.mcp import MCPToolset, StdioTransport
@@ -82,6 +82,7 @@ agent = Agent(instructions=INSTRUCTIONS)
 agent.tool_plain(tools.search_materials)
 
 # TODO(第3回 演習): tools.py に make_quiz を作り、ここで登録しよう
+agent.tool_plain(tools.make_quiz)
 
 # 第5回: 使う MCP サーバーの設定ファイル。Claude Desktop や Cursor と同じ "mcpServers" 形式
 MCP_CONFIG = Path(__file__).resolve().parent / "mcp_servers.json"
@@ -171,6 +172,30 @@ def print_trace(result, elapsed_seconds: float | None = None) -> None:
     print(f"[usage] 入力 {usage.input_tokens:,} tokens / 出力 {usage.output_tokens:,} tokens / モデル応答 {usage.requests} 回")
     cost = f"${usage.cost:.6f} USD" if usage.cost is not None else "算定不可"
     print(f"[cost] 生成APIの推定コスト: {cost}（埋め込み・索引構築分は含まない）")
+
+
+def handle_deferred_tool_requests(target: Agent, result, *, model=None):
+    """承認付きのツール呼び出しを、ユーザーの確認後に実行する。"""
+    if not hasattr(result.output, "approvals") or not result.output.approvals:
+        return result
+
+    print("\n承認が必要なツールが呼ばれました。")
+    for approval in result.output.approvals:
+        print(f"- {approval.tool_name}({approval.args})")
+
+    answer = input("この操作を実行してよいですか? [y/N]: ").strip().lower()
+    if answer not in {"y", "yes", "ye", "ok"}:
+        print("操作をキャンセルしました。")
+        return result
+
+    approvals = {part.tool_call_id: True for part in result.output.approvals}
+    deferred_tool_results = result.output.build_results(approvals=approvals)
+    return target.run_sync(
+        "承認しました。続けて処理してください。",
+        message_history=result.all_messages(),
+        deferred_tool_results=deferred_tool_results,
+        model=model,
+    )
 
 
 def main() -> None:
